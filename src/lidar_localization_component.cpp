@@ -231,7 +231,7 @@ void PCLLocalization::initializePubSub()
     std::bind(&PCLLocalization::cloudReceived, this, std::placeholders::_1));
 
   imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(
-    "imu", rclcpp::SensorDataQoS(),
+    "whill/states/imu", rclcpp::SensorDataQoS(),
     std::bind(&PCLLocalization::imuReceived, this, std::placeholders::_1));
 
   RCLCPP_INFO(get_logger(), "initializePubSub end");
